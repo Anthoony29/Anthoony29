@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportCar | Connecté</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products">Produits</a></li>
+                    <li><a href="/about_us">A propos de nous</a></li>
+                    <li><a href="/account_log">Compte</a></li>            
+                </ul>
+            </nav>
+            <a href="/cart"><img src="{{url_for('static', filename='cart.png')}}" width="30px" height="30px"></a>
+            <img src="{{url_for('static', filename='menu.png')}}" class="menu-icon" 
+            onclick="menutoggle()">
+        </div>
+    </div>
+
+    <section class="bloc1">
+        <div class="content1">
+            <h1>Bonjour {{ username }}</h1>
+            <p>comment vas-tu ?</p>
+            <form method="post">
+                <button class="btn">Deconnexion</button>
+            </form>
+        </div>
+    </section>
+    
+
+
+    <!-----footer----->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Télécharge notre App !</h3>
+                    <p>Télécharge Notre application pour Android et IOS</p>
+                    <div class="app-logo">
+                        <img src="{{url_for('static', filename='play-store.png')}}">
+                        <img src="{{url_for('static', filename='app-store.png')}}">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+                    <p>Un substitue à la location traditionnelle</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Liens Utiles</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Suis nous</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2021 - SCHMIT | SOYER</p>
+        </div>
+    </div>
+
+    <!-------js for toggle menu -------->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px"
+                }
+        }
+    </script>
+
+<!--js for toggle form-->
+
+    <script>
+
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+
+            function register(){
+
+                RegForm.style.transform = "translateX(0px)";
+                LoginForm.style.transform = "translateX(0px)";
+                Indicator.style.transform = "translateX(120px)";
+            }
+            function login(){
+
+                RegForm.style.transform = "translateX(300px)";
+                LoginForm.style.transform = "translateX(300px)";
+                Indicator.style.transform = "translateX(15px)";
+            }
+
+
+    </script>
+</body>
+</html>

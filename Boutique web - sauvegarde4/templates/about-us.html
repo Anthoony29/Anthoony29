@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportCar | Produits</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products">Produits</a></li>
+                    <li><a href="/about_us">A propos de nous</a></li>
+                    <li><a href="/account_log">Compte</a></li>            
+                </ul>
+            </nav>
+            <a href="/cart"><img src="{{url_for('static', filename='cart.png')}}" width="30px" height="30px"></a>
+            <img src="{{url_for('static', filename='menu.png')}}" class="menu-icon" 
+            onclick="menutoggle()">
+        </div>
+    </div>
+
+<!------ Chronologie ------>
+
+<div class="timeline">
+    <div class="outer">
+      <div class="card">
+        <div class="info">
+          <h3 class="title_card">Etape 1</h3>
+          <p>Bonjour et Bienvenue cher SportCar, les numéros 1 de la location de véhicules de haute gamme, ici on roule pas en volvo mais plutôt 
+            en Lambo.Alors si vous chercher une voiture pour le week-end ou la semaine ? impréssionner les jolies filles ? faire le macho ? Ou simplement se faire un macdo avec les potos en grosse Berline ? Si c'est le cas vous êtes au bonne endroit, nos véhicules de marques reconnue et de luxe sont à votre entières disponiblité !  </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title_card">Etape 2</h3>
+          <p>C'est pas compliqué, premièrement si tu compte sur papa pour payer ta location je t'invite à cliquer ici <a href="https://www.pole-emploi.fr/accueil/">https://www.pole-emploi.fr/accueil/</a> sinon après avoir fais ton reperage sur notre site et le choix de ton futur bolide (seulement pour quelques temps calme toi), ajoute le à ton panier.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title_card">Etape 3</h3>
+          <p>Si tu n'as pas de compte, créer toi en un (ne t'inquiete pas on vend pas tes données) ou alors connectes toi et accèdes a ton panier. Fais une petite verification, histoire de ne pas payer 2 voitures (papa ne sera pas content) et passe a l'étape suivante</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title_card">Etape 4</h3>
+          <p>Choisis la date et le lieux de livraison et fais peter la carte. (oublie pas le "s'il te plait" pour papa)</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title_card">Etape 5</h3>
+          <p>Maintenant que tu a fini toutes les étapes, c'est le momment de profiter (mais n'oublies pas qu'il faut nous rendre la voiture un jours, on sait ou t'habites :)). Et on espère que tu reviendras chez nous au plus vite.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+<!-----brands--->
+<div class="brands">
+    <div class="small-container">
+        <h2 class="title">Nos partenaires</h2>
+        <div class="row">
+            <div class="col-5">
+                <a href="https://www.bmw.fr/fr/accueil.html"><img src="{{url_for('static', filename='bmw.png')}}"></a>
+            </div>
+            <div class="col-5">
+                <a href="https://www.peugeot.fr/"><img src="{{url_for('static', filename='Peugeot.png')}}"></a>
+            </div>
+            <div class="col-5">
+                <a href="https://www.audi.fr/site/officiel"><img src="{{url_for('static', filename='Audi.png')}}"></a>
+            </div>
+            <div class="col-5">
+                <a href="https://www.renault.fr/"><img src="{{url_for('static', filename='Renault.png')}}"></a>
+            </div>
+            <div class="col-5">
+                <a href="https://www.mercedes-benz.fr/"><img src="{{url_for('static', filename='mercedes.png')}}"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----footer----->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Télécharge notre App !</h3>
+                <p>Télécharge Notre application pour Android et IOS</p>
+                <div class="app-logo">
+                    <img src="{{url_for('static', filename='play-store.png')}}">
+                    <img src="{{url_for('static', filename='app-store.png')}}">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+                <p>Un substitue à la location traditionnelle</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Suis nous</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2021 - SCHMIT | SOYER</p>
+    </div>
+</div>
+<!-------js for toggle menu -------->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px"
+                }
+        }
+    </script>
+
+</body>
+</html>

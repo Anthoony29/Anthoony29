@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportCar | Détail Produit</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products">Produits</a></li>
+                    <li><a href="/about_us">A propos de nous</a></li>
+                    <li><a href="/account_log">Compte</a></li>            
+                </ul>
+            </nav>
+            <a href="/cart"><img src="{{url_for('static', filename='cart.png')}}" width="30px" height="30px"></a>
+            <img src="{{url_for('static', filename='menu.png')}}" class="menu-icon" 
+            onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-------Single product details----->
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{ cars['image'] }}" width="100%" id="ProductImg">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="{{ cars['image'] }}" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{ cars['image1'] }}" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{ cars['image2'] }}" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{ cars['image3'] }}" width="100%" class="small-img">
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-2">
+                <p>Home | {{ cars['name'] }}</p>
+                <h1>{{ cars['modele'] }}</h1>
+                <h4>{{ cars['price'] }}€/H</h4>
+                <input type="number" value="1">
+                <a class="btn" id="js-eventCart" data-idProduct={{ cars['id'] }}>Ajouter au panier</a>
+                
+                <h3>Détails du produit</h3>
+                <br>
+                <p>{{ cars['content'] }}</p>
+            </div>  
+        </div>
+    </div>
+
+<!---title--->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Autres produits</h2>
+            <p>Voire plus</p>
+        </div>
+    </div>
+
+
+<!----products---->
+    <div class="small-container">
+    
+        <div class="row">
+            {% for cars_rand in cars_rand %}
+        <div class="col-3-selec">
+            <a href="{{ url_for('cars', cars_id=cars_rand['id']) }}"><img src="{{ cars_rand['image'] }}"></a>
+            <a href="{{ url_for('cars', cars_id=cars_rand['id']) }}"><h4>{{ cars_rand['modele'] }}</h4></a>
+            <p>{{ cars_rand['price'] }} €</p>
+        </div>
+        {% endfor %}
+        </div>
+    
+    </div>
+
+<!-----footer----->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Télécharge notre App !</h3>
+                    <p>Télécharge Notre application pour Android et IOS</p>
+                    <div class="app-logo">
+                        <img src="{{url_for('static', filename='play-store.png')}}">
+                        <img src="{{url_for('static', filename='app-store.png')}}">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <a href="/"><img src="{{url_for('static', filename='voiture-de-course.png')}}" width="100px"></a>
+                    <p>Un substitue à la location traditionnelle</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Liens Utiles</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Suis nous</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2021 - SCHMIT | SOYER</p>
+        </div>
+    </div>
+
+    <script src="/static/javaScript/main.js"></script>
+
+
+</body>
+</html>
